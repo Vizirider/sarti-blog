@@ -1,0 +1,40 @@
+<div fxLayout="column" fxFlexFill>
+  <div class="header"></div>
+  <mat-toolbar color="primary" class="fixed-navbar mat-elevation-z10">
+    <mat-toolbar-row>
+      <h1 class="title"><span class="color">SARTI</span>BLOG</h1>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+      <div>
+        <a mat-button [routerLink]="'/'"> Főoldal </a>
+        <a mat-button [routerLink]="'/posts'"> Bejegyzések </a>
+        <a mat-button [routerLink]="'/pictures'"> Képek </a>
+
+        <button mat-button [matMenuTriggerFor]="menu">Admin</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item [routerLink]="'/admin/users'">Felhasználók</button>
+          <button mat-menu-item [routerLink]="'/admin/settings'">Beállítások</button>
+        </mat-menu>        
+      </div>
+
+      <span class="fill-space"></span>
+
+      
+        <!-- <a mat-button> English </a>
+        <a mat-button> Magyar </a> -->
+      
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div class="container" fxFlex fxLayout="row" fxLayoutAlign="center none">
+    <div class="content" fxFlex="50">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <mat-toolbar color="primary" class="fixed-navbar mat-elevation-z10">
+    <mat-toolbar-row>
+      <p class="footer"> © {{year}} Developed in Angular {{version}} <a href="vizirider@gmail.com">vizirider</a></p>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
